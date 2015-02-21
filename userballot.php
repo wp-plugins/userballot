@@ -6,9 +6,9 @@
 /*
 Plugin Name: UserBallot for WordPress
 Plugin URI: http://wordpress.org/plugins/userballot/
-Description: Add UserBallot user feedback to your WordPress site. UserBallot helps you find the <strong>pulse</strong> of your users through <em>simple yes or no questions</em>. To get started: 1) Click the "Activate" link to the left of this description, 2) <a href="http://app.userballot.com/#/signup">Sign up for a UserBallot account</a>, 3) Get your site ID (found by clicking "how it works"), 4) Go to your UserBallot for WordPress configuration page, and save your site ID.
-Author: The UserBallot team
-Version: 1.0
+Description: Add UserBallot user feedback to your WordPress site. UserBallot helps you find the <strong>pulse</strong> of your users through <em>simple yes or no questions</em>. To get started: 1) Click the "Activate" link to the left of this description, 2) <a href="http://app.userballot.com/#/signup">Sign up for a UserBallot account</a>, 3) Get your site ID (found by clicking "Get Started"), 4) Go to your UserBallot for WordPress configuration page, and save your site ID.
+Author: The UserBallot Team
+Version: 1.0.1
 Author URI: http://www.userballot.com/
 License: GPLv2 or later
 */
@@ -31,7 +31,7 @@ function embed_ub(){
 	$siteId = get_option('ub_site_id');
 
 	if( siteId != '' ){
-		echo '<script type="text/javascript">var $ub = window.$ub || {};$ub.siteId = "'.$siteId.'";</script><script src="https://app.userballot.com/client.js"></script>';
+		echo '<script type="text/javascript">var $ub = window.$ub || {};$ub.siteId = "'.$siteId.'";</script><script src="http://app.userballot.com/client.js"></script>';
 	}
 }
 add_action( 'wp_footer', 'embed_ub' );
@@ -73,7 +73,7 @@ function userballot_options_page() {
 			<hr />
 			<?php submit_button(); ?>
 		</form>
-		<p>If you haven't signed up for a UserBallot account yet, <a href="https://app.userballot.com/#/signup">do it now to get your site ID</a>.
+		<p>If you do not have a UserBallot account yet, <a href="http://app.userballot.com/#/signup">sign up now to get your site ID</a>.
 	</div>
 <?php
 }
